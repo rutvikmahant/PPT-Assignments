@@ -1,0 +1,26 @@
+#Que1
+#Move Zeroes
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        zero_pos = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[i], nums[zero_pos] = nums[zero_pos], nums[i]
+                zero_pos += 1
+
+#Que2
+#First Unique Character in a String
+
+class Solution:
+	def firstUniqChar(self, s: str) -> int:
+
+		for i in range(len(s)):
+
+			if s[i] not in s[:i] and s[i] not in s[i+1:]:
+
+				return i
+
+		return -1
